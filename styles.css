@@ -1,0 +1,313 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --accent-color: #007bff; /* Laranja trocado por azul */
+    --light-bg: #f8f9fa;
+    --dark-text: #343a40;
+    --white-text: #ffffff;
+    --border-color: #ddd;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--white-text);
+    color: var(--dark-text);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.search-bar {
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin: 0 1rem;
+    flex-grow: 1;
+    max-width: 600px;
+}
+
+nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-btn {
+    background: none;
+    color: var(--dark-text);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white-text);
+    border-color: var(--primary-color);
+}
+
+.nav-btn.destaque {
+    background-color: var(--primary-color);
+    color: var(--white-text);
+    font-weight: bold;
+    border-color: var(--primary-color);
+}
+
+.nav-btn.destaque:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+main {
+    padding: 1rem 2rem;
+}
+
+.hero {
+    background-color: var(--light-bg);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden; /* Importante para esconder as imagens fora da tela */
+}
+
+.slides {
+    display: flex; /* Coloca os slides lado a lado */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides a {
+    min-width: 100%; /* Garante que cada link/slide tente ocupar a largura total */
+    display: block;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--white-text);
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+.next {
+    right: 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.carousel-indicator.active {
+    background-color: var(--primary-color);
+}
+
+.categories {
+    margin-bottom: 3rem;
+    background-color: #0056b3; /* Cor azul mais escura */
+    padding: 0.5rem 0;
+    width: 100%; /* 
+    box-sizing: border-box; /* Se você ainda quiser essa propriedade */
+}
+
+.category-grid {
+    display: flex;
+    justify-content: center; /* Centraliza os itens */
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 1200px; /* Largura máxima para o conteúdo interno */
+    margin: 0 auto; /* Centraliza o conteúdo interno */
+    padding: 0 1rem; /* Mantenha o padding interno para os itens não grudarem */
+}
+
+.category-item {
+    background-color: var(--white-text);
+    color: var(--primary-color);
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid var(--primary-color);
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.category-item:hover {
+    background-color: var(--primary-color);
+    color: var(--white-text);
+}
+
+.institutional {
+    background-color: var(--light-bg);
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.institutional-grid {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.institutional-item {
+    padding: 1rem;
+    max-width: 300px;
+}
+
+.institutional-item img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.institutional-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.institutional-item p {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+footer {
+    background-color: var(--dark-text);
+    color: var(--white-text);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+.featured-products {
+    background-color: var(--white-text);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.featured-products h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    width: 250px; /* Ajuste conforme necessário */
+    transition: box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.product-item h3 {
+    color: var(--dark-text);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-item .price {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.product-item .add-to-cart {
+    background-color: var(--accent-color); /* Ou var(--primary-color) */
+    color: var(--white-text);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-item .add-to-cart:hover {
+    background-color: darken(var(--accent-color), 10%);
+}
