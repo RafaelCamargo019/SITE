@@ -44,6 +44,5 @@ document.addEventListener('DOMContentLoaded', function() {
     prevButton.addEventListener('click', prevSlide);
     indicatorsContainer.addEventListener('click', goToIndicator);
 
-    // Inicializar indicadores
     updateIndicators();
 });
